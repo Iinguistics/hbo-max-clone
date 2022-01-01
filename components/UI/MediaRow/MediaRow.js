@@ -11,7 +11,7 @@ const MediaRow = (props) => {
 	useEffect(() => {
 		axios
 			.get(
-				`https://api.themoviedb.org/3/${props.endpoint}&api_key=1db7688f317e15dd2ee2933dae838634&language=en-US`,
+				`https://api.themoviedb.org/3/${props.endpoint}&api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
 			)
 			.then(function (response) {
 				setMoviesData(shuffleArray(response.data.results));
